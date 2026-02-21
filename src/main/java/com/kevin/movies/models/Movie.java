@@ -20,8 +20,9 @@ public class Movie {
 
     @Min(value = 1888, message = "Year must be realistic")
     @Max(value = 2100, message = "Year cannot be in the far future")
+    @NotNull(message = "Year is required")
     @Column(name = "release_year")
-    private int year;
+    private Integer year;
 
     @Min(value = 0, message = "Votes cannot be negative")
     private int votes;
@@ -50,11 +51,11 @@ public class Movie {
         this.title = title;
     }
 
-    public int getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 
